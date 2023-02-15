@@ -1,5 +1,5 @@
 <template>
-
+  <img src="src/assets/graph/graph.png" alt="">
 </template>
 
 <script>
