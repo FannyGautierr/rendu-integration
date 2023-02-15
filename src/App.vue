@@ -22,15 +22,63 @@ import AssetsCard from "./components/AssetsCard.vue";
   </div>
 
   <div class="aside">
-    <RecentTransactionsLittle
-    name="Usdt"
-    img="./assets/crypto/Tether.png"
-    price="+$3,546"
-    price-color="green"
-    date="Today, 13:45 pm"
-    status="Received"
+      <div class="little-recent-transactions">
+        <H2 class="text-white poppins">Recent Transactions</H2>
+        <RecentTransactionsLittle
+        name="Usdt"
+        img="src/assets/crypto/Tether.png"
+        Price="+$3,546"
+        color="green"
+        hour="Today, 13:45 pm"
+        status="Received"
+        />
+        <RecentTransactionsLittle
+            name="BNB"
+            img="src/assets/crypto/BNB.png"
+            Price="+ 0.7546"
+            color="green"
+            hour="Today, 5:45 am"
+            status="Buy"
+        />
+        <RecentTransactionsLittle
+            name="Lite Coin"
+            img="src/assets/crypto/Logo.png"
+            Price="- $0.7546"
+            color="red"
+            hour="Today 7:55 am"
+            status="Withdrawal"
+        />
+        <RecentTransactionsLittle
+            name="Bitcoin"
+            img="src/assets/crypto/Group.png"
+            Price="+ $2.7546"
+            color="green"
+            hour="Today 8:55 am"
+            status="Received"
+        />
+        <RecentTransactionsLittle
+            name="Etherum"
+            img="src/assets/crypto/Etherium icon.png"
+            Price="+ $1.646"
+            color="green"
+            hour="Today, 13:45 pm"
+            status="Received"
+        />
+      </div>
+    <AssetsCard
+    name="Bitcoin"
+    logo="src/assets/crypto/bitcoin-white.png"
+    gradient="gradient-1"
+    acronym="BTC"
+    value="121,6450.45"
     />
-    <AssetsCard/>
+    <AssetsCard
+        name="Etherum"
+        logo="src/assets/crypto/Etherium icon.png"
+        gradient="gradient-2"
+        acronym="ETH"
+        value="143,850.45"
+    />
   </div>
 
 </template>
