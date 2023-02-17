@@ -1,9 +1,7 @@
 <template>
 
-  <div class="burger-menu">
-    <span>menu</span>
-  </div>
-  <div id="side-bar">
+
+  <div id="side-bar" ref="side-bar">
 
 
 <div class="logo">
@@ -60,25 +58,29 @@
 
 <script>
 export default {
-  name: "sidebar"
+  name: "sidebar",
+
 }
 
 </script>
 
 <style scoped>
-.burger-menu{
-  display: none;
-}
+
 .log-out{
 margin-top: 2.5rem;
 }
+
 
 #side-bar{
   padding: 3rem;
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 70px;
   width: fit-content;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: #0D0C0C;
 }
 
 .logo{
@@ -136,13 +138,23 @@ margin-top: 2.5rem;
   background-color: black;
 
 }
+
 .icon{
   width: 2rem;
 }
+@media screen and (max-width:800px) {
+  .burger-menu{
+    display: flex;
+    font-size: 3rem;
+  }
+
+}
 
 @media screen and (max-width:700px) {
-  #side-bar{
-    display: none;
+
+
+  .display-flex{
+    display: flex;
   }
 }
 </style>

@@ -45,7 +45,7 @@ defineProps({
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
+flex-wrap: wrap;
   background: rgba(32, 35, 43, 0.7);
   border-radius: 30px;
   color: white;
@@ -71,15 +71,23 @@ defineProps({
   padding: 10px;
   border-radius: 30px;
 }
+@media screen and (max-width:1500px) {
+  .big-transactions{
 
+  }
+}
+@media screen and (max-width:900px) {
 
+}
 @media screen and (max-width:700px) {
   .big-transactions{
-    flex-direction: column;
-    width: fit-content;
 
-    align-items: flex-start;
-    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
 
   }
   .logo{

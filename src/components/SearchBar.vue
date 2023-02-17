@@ -1,12 +1,11 @@
-
-
-
 <template>
 <div class="search-bar">
-
+  <div class="burger-menu" @click="funtion">
+    <ion-icon name="menu-outline" style="color: #FFFFFF"></ion-icon>
+  </div>
   <h2 class="name">Hi, Rogers </h2>
 
-  <div class="search-input non-active" @click="handleClick">
+  <div class="search-input non-active" >
     <img src="src/assets/search-logo.svg" alt="" class="logo-search">
     <p class="text-search" >Search ...</p>
   </div>
@@ -20,18 +19,11 @@
 </div>
 </template>
 
-<script >
-export default {
+<script setup >
+import {onMounted} from "vue";
 
-  methods: {
-    handleClick(event) {
-      // 👇 Change style
-      console.log("hauhuiz")
-      event.currentTarget.classList.toggle('non-active');
-      event.currentTarget.classList.toggle('active');
-    },
-  },
-};
+const {funtion}=defineProps(["funtion"])
+
 </script>
 
 <style scoped>
@@ -40,19 +32,27 @@ export default {
   font-family: 'Poppins', sans-serif;
   font-weight: lighter;
 }
+.burger-menu{
+  position: absolute;
+  z-index: 10;
+  font-size: 100px;
+}
 .search-bar{
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 35px;
-  gap: 100px;
+  gap: 150px;
+  width: 50rem;
+  justify-content: space-evenly;
+  background-color: #0000;
 
 }
 .notif-and-user{
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 190px;
+  gap: 100px;
   margin-left: 20px;
 }
 .search-input{
@@ -68,48 +68,49 @@ export default {
   font-family: 'Poppins', sans-serif;
   font-weight: lighter;
 }
+@media screen and (max-width:1500px) {
+
+  .notif-and-user{
+    gap: 50px;
+  }
+
+}
+@media screen and (max-width:900px) {
+
+
+
+}
 
 @media screen and (max-width:700px) {
  .search-input{
-   width: 4rem;
+   width: 100%;
    text-align: center;
    align-items: center;
-   justify-content: center;
+
    height: fit-content;
    border-radius: 20px;
-
+   grid-row: 2;
+   grid-column: 1/4;
  }
 .logo-search{
 
 }
-.text-search{
-  display: none;
-}
+
 .search-bar{
-  width: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(2,1fr);
+  width: 100%;
   gap: 10px;
-  margin-left: 20px;
+  padding: 20px;
+
 }
 .notif-and-user{
   gap: 40px;
+  grid-column: 2/4;
+  justify-content: space-between;
 }
-.active{
-  width: 10rem;
-  justify-content: flex-start;
 
-}
-.active::after{
-  content: "search";
-  font-weight: lighter;
-  color: grey;
-}
-.non-active{
-  width: 4rem;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  height: fit-content;
-  border-radius: 20px;
-}
+
 }
 </style>

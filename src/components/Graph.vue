@@ -1,14 +1,14 @@
 <template>
- <!-- <img src="src/assets/graph/graph.png" alt=""> -->
-  <canvas id="bitcoin-chart"></canvas>
+ <img src="src/assets/graph/graph.png" alt="">
+ <!-- <canvas id="bitcoin-chart" ref="ctx"></canvas> -->
 </template>
 
-<script>
-import Chart
+<script >
+
 export default {
   name: "Graph",
-  mounted() {
-    const ctx = document.getElementById('bitcoin-chart').getContext('2d');
+ /* mounted() {
+    const ctx = this.$refs.ctx.getContext('2d');
     new Chart(ctx, {
       type: 'line',
       data: {
@@ -23,7 +23,7 @@ export default {
       },
       options: {},
     });
-  }
+  }*/
 }
 
 </script>

@@ -7,13 +7,28 @@ import Graph from "./components/Graph.vue";
 import RecentTransactionsBig from "./components/RecentTransactionsBig.vue";
 import RecentTransactionsLittle from "./components/RecentTransactionsLittle.vue";
 import AssetsCard from "./components/AssetsCard.vue";
+import {onMounted, ref} from "vue";
+
+const showSideBar = ref(false)
+
+function toggle(){
+  showSideBar.value=!showSideBar.value
+}
+
+onMounted(()=>{
+  showSideBar.value = window.innerWidth > 900;
+  window.addEventListener('resize',function (){
+    showSideBar.value = window.innerWidth > 900;
+  })
+})
+
 </script>
 
 <template>
   <div class="header">
-    <Sidebar/>
-    <div>
-    <SearchBar/>
+    <Sidebar v-if="showSideBar"/>
+    <div class="little-div">
+    <SearchBar :funtion="toggle"/>
       <div class="flex-row main-layout">
         <div class="flex-col center-layout">
           <!-- !!!--->
@@ -84,7 +99,9 @@ import AssetsCard from "./components/AssetsCard.vue";
                 hour="Today, 13:45 pm"
                 status="Received"
             />
-            <h2 class="text-white poppins">Assets</h2>
+            </div>
+            <div class="assets">
+              <h2 class="text-white poppins">Assets</h2>
 
             <AssetsCard
                 name="Bitcoin"
@@ -120,47 +137,98 @@ import AssetsCard from "./components/AssetsCard.vue";
 }
 
 .main-layout{
-  gap: 80px;
+  flex-direction: row;
+  justify-content: center;
+  gap: 100px;
+
 }
 
 .center-layout{
   margin-top: 50px;
   padding: 20px;
   gap: 20px;
-  overflow: scroll;
+
   height: 100vh;
+
 }
 .right-sidebar{
   justify-content: space-between;
-  overflow: scroll;
-margin-right: 2rem;
+
+  margin-right: 2rem;
   height:100vh;
+  margin-top: 60px;
+  gap: 100px;
+
+
 }
 .little-recent-transactions{
   display: flex;
   gap: 20px;
   flex-direction: column;
-  margin-top: 55px;
+  /*margin-top: 55px;*/
 }
 
 .recent-transactions{
   justify-content: space-between;
   padding: 0 1rem;
 }
+.little-div{
+
+}
+@media screen and (max-width:1500px) {
+  .main-layout{
+    display: flex;
+
+    gap: 0;
+  }
+  .center-layout{
+
+
+  }
+  .right-sidebar{
+
+    justify-content:space-evenly;
+
+    height: fit-content;
+    align-items: flex-start;
+    gap:20px;
+  }
+  .assets{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+  }
+
+}
+
+@media screen and (max-width:900px) {
+
+}
 
 @media screen and (max-width:700px) {
+  .right-sidebar{
+    margin-top: 0;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 10px;
+
+  }
   .header{
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
   .main-layout{
     flex-direction: column;
+    width: 25rem;
   }
 
   .center-layout{
     width:25rem;
     overflow: visible;
     height: auto;
+    align-items: center;
   }
 
   .recent-transactions{
@@ -169,6 +237,10 @@ margin-right: 2rem;
   }
   .little-recent-transactions{
     overflow: visible;
+    width: 25rem;
+    margin-top: 1px;
+  }
+  .little-div{
     width: 25rem;
   }
 }
