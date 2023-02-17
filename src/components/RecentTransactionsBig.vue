@@ -45,7 +45,7 @@ defineProps({
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-flex-wrap: wrap;
+  flex-wrap: wrap;
   background: rgba(32, 35, 43, 0.7);
   border-radius: 30px;
   color: white;
@@ -71,14 +71,7 @@ flex-wrap: wrap;
   padding: 10px;
   border-radius: 30px;
 }
-@media screen and (max-width:1500px) {
-  .big-transactions{
 
-  }
-}
-@media screen and (max-width:900px) {
-
-}
 @media screen and (max-width:700px) {
   .big-transactions{
 

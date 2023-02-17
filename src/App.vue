@@ -13,12 +13,17 @@ const showSideBar = ref(false)
 
 function toggle(){
   showSideBar.value=!showSideBar.value
+  document.addEventListener("click",function (){
+
+  })
 }
 
 onMounted(()=>{
+
   showSideBar.value = window.innerWidth > 900;
   window.addEventListener('resize',function (){
     showSideBar.value = window.innerWidth > 900;
+
   })
 })
 
@@ -26,7 +31,7 @@ onMounted(()=>{
 
 <template>
   <div class="header">
-    <Sidebar v-if="showSideBar"/>
+    <Sidebar v-if="showSideBar" :funtion="toggle"/>
     <div class="little-div">
     <SearchBar :funtion="toggle"/>
       <div class="flex-row main-layout">
@@ -155,9 +160,10 @@ onMounted(()=>{
   justify-content: space-between;
 
   margin-right: 2rem;
-  height:100vh;
+  height:90vh;
   margin-top: 60px;
   gap: 100px;
+  overflow: scroll;
 
 
 }
@@ -166,6 +172,7 @@ onMounted(()=>{
   gap: 20px;
   flex-direction: column;
   /*margin-top: 55px;*/
+
 }
 
 .recent-transactions{
@@ -175,14 +182,20 @@ onMounted(()=>{
 .little-div{
 
 }
-@media screen and (max-width:1500px) {
+.assets{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media screen and (max-width:1200px) {
   .main-layout{
     display: flex;
-
+    flex-direction: column;
+    align-items: center;
     gap: 0;
   }
   .center-layout{
-
+    width: fit-content;
 
   }
   .right-sidebar{
@@ -203,7 +216,9 @@ onMounted(()=>{
 }
 
 @media screen and (max-width:900px) {
-
+.right-sidebar{
+overflow: visible;
+}
 }
 
 @media screen and (max-width:700px) {

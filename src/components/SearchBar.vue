@@ -33,9 +33,9 @@ const {funtion}=defineProps(["funtion"])
   font-weight: lighter;
 }
 .burger-menu{
-  position: absolute;
-  z-index: 10;
-  font-size: 100px;
+
+
+  font-size: 3rem;
 }
 .search-bar{
   display: flex;
@@ -43,10 +43,13 @@ const {funtion}=defineProps(["funtion"])
   align-items: center;
   margin-top: 35px;
   gap: 150px;
-  width: 50rem;
+  width: 70rem;
   justify-content: space-evenly;
   background-color: #0000;
 
+}
+.burger-menu{
+  display: none;
 }
 .notif-and-user{
   display: flex;
@@ -58,7 +61,7 @@ const {funtion}=defineProps(["funtion"])
 .search-input{
   background-color: #FFFFFF;
   border-radius: 15px;
-  width: 30rem;
+  width: 60rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -71,14 +74,46 @@ const {funtion}=defineProps(["funtion"])
 @media screen and (max-width:1500px) {
 
   .notif-and-user{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     gap: 50px;
   }
+.search-input{
 
 }
+.search-bar{
+  justify-content: space-between;
+}
+}
 @media screen and (max-width:900px) {
+  .search-bar{
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  .burger-menu{
+    display: block;
+    grid-column: 1;
+    grid-row:1 ;
+  }
+
+  .notif-and-user{
+    grid-row: 1;
+    grid-column: 3;
+    gap: 0;
+    justify-content: center;
+  }
 
 
-
+  .name{
+    grid-row: 1;
+    grid-column: 2;
+    display: none;
+  }
+  .search-input{
+    width: 100%;
+    grid-column: 1/5;
+  }
 }
 
 @media screen and (max-width:700px) {

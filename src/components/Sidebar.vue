@@ -3,6 +3,7 @@
 
   <div id="side-bar" ref="side-bar">
 
+    <div class="close text-white poppins" @click="funtion"> X</div>
 
 <div class="logo">
   <p>
@@ -56,16 +57,15 @@
 </div>
 </template>
 
-<script>
-export default {
-  name: "sidebar",
-
-}
-
+<script setup>
+const {funtion}=defineProps(["funtion"])
 </script>
 
 <style scoped>
-
+.close{
+  display: none;
+  font-size: 3rem;
+}
 .log-out{
 margin-top: 2.5rem;
 }
@@ -142,10 +142,11 @@ margin-top: 2.5rem;
 .icon{
   width: 2rem;
 }
-@media screen and (max-width:800px) {
-  .burger-menu{
-    display: flex;
+@media screen and (max-width:900px) {
+
+  .close{
     font-size: 3rem;
+    display: block;
   }
 
 }
