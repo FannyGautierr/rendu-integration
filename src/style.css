@@ -22,6 +22,10 @@ body{
   font-family: 'Poppins', sans-serif;
 }
 
+.text-grey{
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .flex-col{
   display: flex;
   flex-direction: column;

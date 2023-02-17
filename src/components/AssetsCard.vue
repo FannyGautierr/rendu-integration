@@ -56,7 +56,7 @@ defineProps({
   border-radius: 30px;
   font-family: 'Poppins', sans-serif;
   padding:2rem 3rem ;
-  width: 25rem;
+  width: 24rem;
   height: fit-content;
 
 }

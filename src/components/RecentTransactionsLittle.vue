@@ -16,11 +16,11 @@ defineProps({
   <div class="recent-transactions">
 
     <div class="photo-name">
-    <img :src="img" alt="">
-    <div class="name-status">
-      <p><b>{{ name }}</b></p>
-      <p>{{ status }}</p>
-    </div>
+      <img :src="img" alt="">
+      <div class="name-status">
+        <p><b>{{ name }}</b></p>
+        <p>{{ status }}</p>
+      </div>
     </div>
 
     <div class="price-date">
@@ -46,14 +46,22 @@ defineProps({
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 100px;
+  justify-content: space-between;
+  gap: 10px;
+  width: 24rem;
 }
-.name-status ,.price-date{
+.name-status {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 
+}
+.price-date{
+ display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 .photo-name{
   display: flex;
@@ -64,5 +72,8 @@ defineProps({
 *{
   color: #FFFFFF;
   font-family: 'Poppins', sans-serif;
+}
+@media screen and (max-width:700px) {
+
 }
 </style>

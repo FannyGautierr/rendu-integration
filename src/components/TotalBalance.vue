@@ -9,7 +9,7 @@ export default {
 <template>
 <div class="emo">
   <div class="flex-col text-white poppins">
-    <H2 >Total Balance</H2>
+    <h2 >Total Balance</h2>
     <div class="flex-row gap">
         <p>0.97894652 </p>
         <div class="yellow">BTC</div>
@@ -65,5 +65,12 @@ export default {
 .gap{
   align-items: center;
   gap: 10px;
+}
+@media screen and (max-width:700px) {
+  .emo{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
 }
 </style>

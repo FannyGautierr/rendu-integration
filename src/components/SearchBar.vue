@@ -1,11 +1,14 @@
+
+
+
 <template>
 <div class="search-bar">
 
   <h2 class="name">Hi, Rogers </h2>
 
-  <div class="search-input">
-    <img src="src/assets/search-logo.svg" alt="">
-    <p>Search ...</p>
+  <div class="search-input non-active" @click="handleClick">
+    <img src="src/assets/search-logo.svg" alt="" class="logo-search">
+    <p class="text-search" >Search ...</p>
   </div>
 
   <div class="notif-and-user">
@@ -17,10 +20,18 @@
 </div>
 </template>
 
-<script>
+<script >
 export default {
-  name: "SearchBar"
-}
+
+  methods: {
+    handleClick(event) {
+      // 👇 Change style
+      console.log("hauhuiz")
+      event.currentTarget.classList.toggle('non-active');
+      event.currentTarget.classList.toggle('active');
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -32,18 +43,17 @@ export default {
 .search-bar{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 35px;
   gap: 100px;
 
 }
 .notif-and-user{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
-  gap: 200px;
+  gap: 190px;
+  margin-left: 20px;
 }
 .search-input{
   background-color: #FFFFFF;
@@ -57,5 +67,49 @@ export default {
   gap: 15px;
   font-family: 'Poppins', sans-serif;
   font-weight: lighter;
+}
+
+@media screen and (max-width:700px) {
+ .search-input{
+   width: 4rem;
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+   height: fit-content;
+   border-radius: 20px;
+
+ }
+.logo-search{
+
+}
+.text-search{
+  display: none;
+}
+.search-bar{
+  width: 100vh;
+  gap: 10px;
+  margin-left: 20px;
+}
+.notif-and-user{
+  gap: 40px;
+}
+.active{
+  width: 10rem;
+  justify-content: flex-start;
+
+}
+.active::after{
+  content: "search";
+  font-weight: lighter;
+  color: grey;
+}
+.non-active{
+  width: 4rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  border-radius: 20px;
+}
 }
 </style>

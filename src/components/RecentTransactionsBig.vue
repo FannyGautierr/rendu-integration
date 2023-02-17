@@ -16,7 +16,7 @@ defineProps({
 
 <template>
   <div class="big-transactions poppins">
-    <img :src="logo" alt="">
+    <img :src="logo" alt="" class="logo">
     <div>
       <p>{{name}}</p>
       <p>{{acronym}}</p>
@@ -39,14 +39,17 @@ defineProps({
 
 <style scoped>
 
+
 .big-transactions{
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
+
   background: rgba(32, 35, 43, 0.7);
   border-radius: 30px;
   color: white;
+  padding: 20px;
 
 }
 .red{
@@ -65,9 +68,27 @@ defineProps({
 .trade-button{
   background-color: #0D0C0C;
   color: #FFFFFF;
+  padding: 10px;
+  border-radius: 30px;
 }
 
 
+@media screen and (max-width:700px) {
+  .big-transactions{
+    flex-direction: column;
+    width: fit-content;
 
+    align-items: flex-start;
+    gap: 20px;
+
+  }
+  .logo{
+    margin:0 auto;
+  }
+  .trade-button{
+    margin:0 auto;
+
+  }
+}
 
 </style>

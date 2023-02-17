@@ -1,47 +1,51 @@
 <template>
+
+  <div class="burger-menu">
+    <span>menu</span>
+  </div>
   <div id="side-bar">
 
 
 <div class="logo">
   <p>
-  <img src="src/assets/mLogo.svg" alt="">
+  <img src="src/assets/mLogo.svg" alt="" class="icon">
   <span>inance</span>
   </p>
 </div>
 <div class="menu-items-and-dash">
   <div class="dashboard">
-    <img src="src/assets/dashboard-logo.svg" alt="">
+    <img src="src/assets/dashboard-logo.svg" alt="" class="icon">
     <p>Dashboard</p>
   </div>
 
   <div class="menu">
     <div class="menu-items">
-      <img src="src/assets/invoices-logo.svg" alt="">
+      <img src="src/assets/invoices-logo.svg" alt="" class="icon">
       <p>Invoices</p>
     </div>
 
     <div class="menu-items">
-      <img src="src/assets/clients-logo.svg" alt="">
+      <img src="src/assets/clients-logo.svg" alt="" class="icon">
       <p>Clients</p>
     </div>
 
     <div class="menu-items">
-      <img src="src/assets/products-logo.svg" alt="">
+      <img src="src/assets/products-logo.svg" alt="" class="icon">
       <p>Products</p>
     </div>
 
     <div class="menu-items">
-      <img src="src/assets/messages-logo.svg" alt="">
+      <img src="src/assets/messages-logo.svg" alt="" class="icon">
       <p>Messages</p>
     </div>
 
     <div class="menu-items">
-      <img src="src/assets/settings-logo.svg" alt="">
+      <img src="src/assets/settings-logo.svg" alt="" class="icon">
       <p>Settings</p>
     </div>
 
     <div class="menu-items">
-      <img src="src/assets/help-logo.svg" alt="">
+      <img src="src/assets/help-logo.svg" alt="" class="icon">
       <p>Help</p>
     </div>
 
@@ -58,12 +62,15 @@
 export default {
   name: "sidebar"
 }
+
 </script>
 
 <style scoped>
-
+.burger-menu{
+  display: none;
+}
 .log-out{
-
+margin-top: 2.5rem;
 }
 
 #side-bar{
@@ -82,7 +89,8 @@ export default {
   gap: 4px;
   font-size: 36px;
   width: fit-content;
-  color: #FFFFFF
+  color: #FFFFFF;
+
 }
 .menu-items-and-dash{
   display: flex;
@@ -126,5 +134,15 @@ export default {
   color: black;
   color: rgba(255,255,255,0.8);
   background-color: black;
+
+}
+.icon{
+  width: 2rem;
+}
+
+@media screen and (max-width:700px) {
+  #side-bar{
+    display: none;
+  }
 }
 </style>
