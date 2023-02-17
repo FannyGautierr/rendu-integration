@@ -1,7 +1,37 @@
-# Vue 3 + Vite
+# Rendu intégration
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Getting Started
 
-## Recommended IDE Setup
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Prerequisites
+What things you need to install the software and how to install them
+
+- Node.js - You can download it from the official website or install it via package manager.
+- npm - You can download it from the official website or install it via package manager.
+
+## Installing
+
+A step by step series of examples that tell you how to get a development env running
+
+Clone the repository
+```shell
+$ git clone git@github.com:FannyGautierr/rendu-integration.git
+```
+Navigate into the project directory
+bash
+```shell
+$ cd rendu-integration
+```
+Install dependencies
+``` shell
+$ npm install
+```
+
+## Run the project
+
+To run the app locally in development mode, run the following command:
+```shell
+$ npm run serve
+```
+This will start a local server at http://localhost:8000, where you can view the app in your browser.
