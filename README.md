@@ -32,6 +32,6 @@ $ npm install
 
 To run the app locally in development mode, run the following command:
 ```shell
-$ npm run serve
+$ npm run dev
 ```
 This will start a local server at http://localhost:8000, where you can view the app in your browser.

@@ -80,10 +80,11 @@ const {funtion}=defineProps(["funtion"])
     gap: 50px;
   }
 .search-input{
-
+width: 20rem;
 }
 .search-bar{
-  justify-content: space-between;
+justify-content: space-between;
+  width: 100%
 }
 }
 @media screen and (max-width:900px) {

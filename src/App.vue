@@ -187,6 +187,20 @@ onMounted(()=>{
   flex-direction: column;
   gap: 20px;
 }
+@media screen and (max-width:1500px) {
+  .main-layout{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+.right-sidebar{
+  overflow: visible;
+}
+.center-layout{
+  width: fit-content;
+}
+
+}
 @media screen and (max-width:1200px) {
   .main-layout{
     display: flex;
