@@ -31,9 +31,9 @@ onMounted(()=>{
 
 <template>
   <div class="header">
-    <Sidebar v-if="showSideBar" :funtion="toggle"/>
+    <Sidebar v-if="showSideBar" :function="toggle"/>
     <div class="little-div">
-    <SearchBar :funtion="toggle"/>
+    <SearchBar :function="toggle"/>
       <div class="flex-row main-layout">
         <div class="flex-col center-layout">
           <!-- !!!--->

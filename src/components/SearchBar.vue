@@ -1,6 +1,6 @@
 <template>
 <div class="search-bar">
-  <div class="burger-menu" @click="funtion">
+  <div class="burger-menu" @click="function">
     <ion-icon name="menu-outline" style="color: #FFFFFF"></ion-icon>
   </div>
   <h2 class="name">Hi, Rogers </h2>
@@ -22,7 +22,7 @@
 <script setup >
 import {onMounted} from "vue";
 
-const {funtion}=defineProps(["funtion"])
+const {function}=defineProps(["function"])
 
 </script>
 
