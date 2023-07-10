@@ -3,7 +3,7 @@
 
   <div id="side-bar" ref="side-bar">
 
-    <div class="close text-white poppins" @click="funtion"> X</div>
+    <div class="close text-white poppins" @click="function"> X</div>
 
 <div class="logo">
   <p>
@@ -58,7 +58,7 @@
 </template>
 
 <script setup>
-const {funtion}=defineProps(["funtion"])
+const {function}=defineProps(["function"])
 </script>
 
 <style scoped>
